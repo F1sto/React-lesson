@@ -1,9 +1,10 @@
 import React from 'react';
+import classes from '../components-style/Header.module.css';
 
 const Header = () => {
-    return (<div>
+    return (<header className={classes.header}>
       
-    </div>);
+    </header>);
 }
 
 export default Header;
