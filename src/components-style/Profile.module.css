@@ -1,0 +1,22 @@
+.userProfile img {
+    width: 100px;
+    height: 100px;
+}
+
+p {
+    margin: 0;
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userDescription {
+    padding-left: 10px;
+}
+
+.item {
+    padding-top: 5px;
+}
