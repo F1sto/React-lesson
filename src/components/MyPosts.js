@@ -3,6 +3,12 @@ import classes from '../components-style/MyPosts.module.css';
 import Post from './Post';
 
 const MyPosts = () => {
+    let postsData = [
+        {id: 1, message: 'Hello', likesCount: '23'},
+        {id: 2, message: 'Welcome here ^^', likesCount: '1'},
+
+    ]
+
     return (<div>
         <div>
             Posts
@@ -11,8 +17,8 @@ const MyPosts = () => {
                 <button>Add post</button>
             </div>
             <div className={classes.psots}>
-                <Post message='Hello!' likeCount='23' />
-                <Post message='Welcome here ^^' likeCount='1' />
+                <Post message={postsData[0].message} likesCount={postsData[0].likesCount} />
+                <Post message={postsData[1].message} likesCount={postsData[1].likesCount} />
             </div>
         </div>
     </div>);
