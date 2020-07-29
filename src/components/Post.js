@@ -6,6 +6,7 @@ const Post = (props) => {
         <div className={classes.item}>
             <img src='https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/18/10/avatar.jpg' />
             {props.message}
+            <p><span>Like </span> {props.likeCount}</p>
         </div>
     </div>);
 }

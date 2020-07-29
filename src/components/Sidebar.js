@@ -1,16 +1,27 @@
 import React from 'react';
 import classes from '../components-style/Sidebar.module.css';
-
-// let activeItem = `${classes.item} ${classes.active}`;
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
-    return (<nav className={classes.nav}>
-        <div className={classes.item}><a>Profile</a></div>
-        <div className={`${classes.item} ${classes.active}`}><a>Messages</a></div>
-        <div className={classes.item}><a>News</a></div>
-        <div className={classes.item}><a>Music</a></div>
-        <div className={classes.item}><a>Settings</a></div>
-    </nav>);
+    return (<div className={classes.sidebar}>
+        <nav className={classes.nav}>
+            <div className={classes.item}>
+                <NavLink to='/profile' activeClassName={classes.active}>Profile</NavLink>
+            </div>
+            <div className={classes.item}>
+                <NavLink to='/dialogs' activeClassName={classes.active}>Messages</NavLink>
+            </div>
+            <div className={classes.item}>
+                <NavLink to='/news' activeClassName={classes.active}>News</NavLink>
+            </div>
+            <div className={classes.item}>
+                <NavLink to='/music' activeClassName={classes.active}>Music</NavLink>
+            </div>
+            <div className={classes.item}>
+                <NavLink to='/settings' activeClassName={classes.active}>Settings</NavLink>
+            </div>
+        </nav>
+        </div>);
 }
 
 export default Sidebar;

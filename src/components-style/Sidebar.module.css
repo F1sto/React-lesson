@@ -1,7 +1,16 @@
-.item {
+.sidebar {
+    grid-area: s;
+    background-color: hotpink;
+}
+
+a {
+    text-decoration: none;
+}
+
+.item a{
     color: #fff;
 }
 
-.item.active {
+.item a.active{
     color: midnightblue;
 }
