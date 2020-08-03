@@ -1,3 +1,27 @@
 .message {
 
 }
+
+.hisMessage img, .myMessage img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.hisMessage, .myMessage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hisMessage {
+    justify-content: flex-end;
+}
+
+.myMessage.hisImg {
+    display: none;
+}
+
+.hisMessage.myImg {
+    display: none;
+}

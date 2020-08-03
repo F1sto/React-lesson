@@ -8,11 +8,11 @@ let state = {
     },
     dialogsPage: {
         messages: [
-            {id: 1, message: 'Hello'},
-            {id: 2, message: 'Hey!'},
-            {id: 3, message: 'How are you ?'},
-            {id: 4, message: 'YoPrSt'},
-            {id: 5, message: 'Omaewa'},
+            {isMe: true,  id: 1, message: 'Hello'},
+            {isMe: false, id: 2, message: 'Hey!'},
+            {isMe: true,  id: 3, message: 'How are you ?'},
+            {isMe: false, id: 4, message: 'YoPrSt'},
+            {isMe: true,  id: 5, message: 'Omaewa'},
         ],
         dialogs: [
             {id: 1, name: 'Lada'},
