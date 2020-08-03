@@ -9,8 +9,29 @@ a {
 
 .item a{
     color: #fff;
+    padding-left: 5px;
 }
 
 .item a.active{
     color: midnightblue;
+}
+
+.friendList {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings {
+    padding: 10px 0;
+}
+
+.friends {
+    font-size: 25px;
+}
+
+.friendList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }

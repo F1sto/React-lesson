@@ -9,6 +9,7 @@ import {Route, BrowserRouter} from 'react-router-dom';
 import Music from './components/Music/Music.jsx';
 import News from './components/News/News.jsx';
 import Settings from './components/Settings/Settings.jsx';
+import Friends from "./components/Friends/Friends";
 
 const App = (props) => {
 
@@ -16,7 +17,7 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper container'>
                 <Header/>
-                <Sidebar/>
+                <Sidebar state={props.state.mainPage} />
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs'
                            render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
@@ -25,6 +26,7 @@ const App = (props) => {
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
+                    <Route path='/friends'  component={Friends} />
                 </div>
                 {/* <Footer /> */}
             </div>
