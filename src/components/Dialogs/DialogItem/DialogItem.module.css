@@ -16,3 +16,6 @@
     align-items: center;
 }
 
+.dialog .active {
+    color: orange;
+}

@@ -11,10 +11,10 @@ a {
     padding: 10px;
 }
 
-.dialogItems .active {
-    color: orange;
-}
-
 .messages {
     padding: 10px;
+}
+
+.sendMessage {
+    margin: 0 auto;
 }
