@@ -1,3 +1,5 @@
+import {renderTree} from "../render";
+
 let state = {
     profilePage: {
         posts: [
@@ -37,15 +39,16 @@ export let addPost = (postMessage) => {
     };
 
     state.profilePage.posts.push(newPost);
+    renderTree(state);
 }
 
 export let addMessage = (message) => {
-    debugger;
     let newMessage = {
         message: message,
     };
 
     state.dialogsPage.messages.push(newMessage);
+    renderTree(state);
 }
 
 export default state;
