@@ -5,8 +5,8 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = props.state.messages.map(m => <Message isMe={m.isMe} message={m.message}/>);
+    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+    let messagesElements = props.dialogsPage.messages.map(m => <Message isMe={m.isMe} message={m.message}/>);
 
     // map преобразует массив messages в массив messagesElements (перебор )
     // без этого метода массива отрисовка сообщений выглядит так:
@@ -15,10 +15,16 @@ const Dialogs = (props) => {
     // <Message message={messages[2].message} />
 
     let newMessageElement = React.createRef();
+
     let addMessage = () => {
         let text = newMessageElement.current.value;
         props.addMessage(text);
-        newMessageElement.current.value = '';
+        props.updateNewMessage('');
+    }
+
+    let onMessageChange = () => {
+        let text = newMessageElement.current.value;
+        props.updateNewMessage(text);
     }
 
     return (
@@ -31,7 +37,8 @@ const Dialogs = (props) => {
             </div>
             <div></div> {/*for grid*/}
             <div className={classes.sendMessage}>
-                <textarea ref={newMessageElement}></textarea>
+                <textarea ref={newMessageElement} onChange={onMessageChange}
+                          value={props.dialogsPage.newMessageText} />
                 <button onClick={addMessage}>Send</button>
             </div>
         </div>);
