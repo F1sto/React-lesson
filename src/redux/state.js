@@ -43,15 +43,17 @@ export let addPost = () => {
     };
 
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
     renderTree(state);
 }
 
-export let addMessage = (message) => {
+export let addMessage = () => {
     let newMessage = {
-        message: message,
+        message: state.dialogsPage.newMessageText,
     };
 
     state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
     renderTree(state);
 }
 
