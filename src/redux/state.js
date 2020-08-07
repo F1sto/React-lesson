@@ -1,4 +1,5 @@
-import {renderTree} from "../render";
+let renderTree = () => {
+}
 
 let state = {
     profilePage: {
@@ -35,7 +36,7 @@ let state = {
 
 window.state = state;
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,
@@ -47,7 +48,7 @@ export let addPost = () => {
     renderTree(state);
 }
 
-export let addMessage = () => {
+export const addMessage = () => {
     let newMessage = {
         message: state.dialogsPage.newMessageText,
     };
@@ -57,14 +58,18 @@ export let addMessage = () => {
     renderTree(state);
 }
 
-export let updateNewPostText = (newPost) => {
+export const updateNewPostText = (newPost) => {
     state.profilePage.newPostText = newPost;
     renderTree(state)
 }
 
-export let updateNewMessage = (newMessage) => {
+export const updateNewMessage = (newMessage) => {
     state.dialogsPage.newMessageText = newMessage;
     renderTree(state);
+}
+
+export const subscribe = (observer) => {
+    renderTree = observer;
 }
 
 export default state;
