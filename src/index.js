@@ -5,23 +5,25 @@ import state, {addMessage, addPost, subscribe, updateNewMessage, updateNewPostTe
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
+import store from "./redux/state";
 
 export let renderTree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
             <App state={state}
-                 addPost={addPost}
-                 updateNewPostText={updateNewPostText}
-                 updateNewMessage={updateNewMessage}
-                 addMessage={addMessage} />
+                addPost={store.addPost.bind(store)}
+                updateNewPostText={store.updateNewPostText.bind(store)}
+                updateNewMessage={store.updateNewMessage.bind(store)}
+                addMessage={store.addMessage.bind(store)}
+            />
         </BrowserRouter>,
         document.getElementById('root')
     );
 }
 
-renderTree(state);
+renderTree(store.getState());
 
-subscribe(renderTree);
+store.subscribe(renderTree);
 
 
 

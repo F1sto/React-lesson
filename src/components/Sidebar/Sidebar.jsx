@@ -5,7 +5,7 @@ import Friends from "./Friends/Friends";
 
 const Sidebar = (props) => {
 
-    let friendsList = props.state.friendList.map(f => <Friends name={f.name} />);
+    // let friendsList = props.state.friendList.map(f => <Friends name={f.name} />);
     let settingsStyle = classes.item + ' ' + classes.settings;
     let friendsStyle = classes.item + ' ' + classes.friends;
 
@@ -30,7 +30,7 @@ const Sidebar = (props) => {
                 <NavLink to='/friends' activeClassName={classes.active}>Friends</NavLink>
             </div>
             <div className={classes.friendList}>
-                {friendsList}
+                {/*{friendsList}*/}
             </div>
         </nav>
     </div>);
