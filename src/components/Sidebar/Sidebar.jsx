@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './Sidebar.module.css';
 import {NavLink} from 'react-router-dom';
-import Friends from "./Friends/Friends";
+import TopFriends from "./Friends/TopFriends";
 
 const Sidebar = (props) => {
 
-    // let friendsList = props.state.friendList.map(f => <Friends name={f.name} />);
+    let friendsList = props.friends.map(f => <TopFriends name={f.name} />);
     let settingsStyle = classes.item + ' ' + classes.settings;
     let friendsStyle = classes.item + ' ' + classes.friends;
 
@@ -30,7 +30,7 @@ const Sidebar = (props) => {
                 <NavLink to='/friends' activeClassName={classes.active}>Friends</NavLink>
             </div>
             <div className={classes.friendList}>
-                {/*{friendsList}*/}
+                {friendsList}
             </div>
         </nav>
     </div>);

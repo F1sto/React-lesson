@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+// import classes from './.module.css';
 
-const Friends = (props) => {
+const Friends = () => {
     return (<div>
-
-    </div>)
+        Friends
+    </div>);
 }
 
 export default Friends;

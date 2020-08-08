@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './Friends.module.css';
 
-const Friends = (props) => {
+const TopFriends = (props) => {
 
     return (
         <div className={classes.item}>
@@ -12,4 +12,4 @@ const Friends = (props) => {
     );
 }
 
-export default Friends;
+export default TopFriends;
