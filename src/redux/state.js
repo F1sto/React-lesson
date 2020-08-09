@@ -53,23 +53,14 @@ let store = {
     },
 
     dispatch(action) {
-
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage =  dialogsReducer(this._state.dialogsPage, action);
         this._state.mainPage =  mainPageReducer(this._state.mainPage, action);
 
         this._callSubscriber(this._state);
-
     },
 
 }
-
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text})
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
-export const updateNewMessageActionCreator = (text) =>
-    ({type: UPDATE_NEW_MESSAGE, newMessage: text})
 
 window.store = store;
 export default store;
